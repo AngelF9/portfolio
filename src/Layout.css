@@ -1,0 +1,36 @@
+.layout-container {
+  display: flex;
+  padding: 20px;
+  justify-content: flex-start; /* Align items to the start (left) */
+
+  width: 100%; /* Ensure full width */
+}
+
+.kitchen-sink {
+  flex: 0 0 auto; /* Prevent KitchenSinkExample from growing or shrinking */
+  margin-right: 20px; /* Add space between KitchenSinkExample and MainContent */
+}
+
+.main-content {
+  flex: 1; /* Allow MainContent to grow and take available space */
+  max-width: 900px; /* Set a maximum width for MainContent */
+}
+
+/* Contact Info Card */
+
+.profile-image {
+  width: 250px; /* Set a specific width for the profile picture */
+  height: 250px; /* Ensure the height matches the width */
+  object-fit: cover; /* Ensure the image covers the specified dimensions */
+  border-radius: 20%; /* Make the image circular */
+}
+
+.logos {
+  width: 25px; /* Set a specific width for the profile picture */
+  height: 25px; /* Ensure the height matches the width */
+  object-fit: cover; /* Ensure the image covers the specified dimensions */
+  border-radius: 20%; /* Make the image circular */
+  /* following lines space logo from text*/
+  margin-right: 10px;
+  vertical-align: middle;
+}
