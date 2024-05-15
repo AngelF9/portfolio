@@ -1,24 +1,18 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-// src/index.js or src/index.tsx
 import "bootstrap/dist/css/bootstrap.min.css";
-import NavBar from "./Navbar.jsx";
-import Layout from "./Layout.jsx";
-
-function Image() {
-  return (
-    <div className="wallpaper-container">
-      <img src="images/wallpaper_15.jpg" alt="" className="wallpaper-photo" />
-    </div>
-  );
-}
+import HomePage from "./pages/Home/Home";
+import About from "./pages/About";
 
 function App() {
   return (
-    <>
-      <NavBar />
-      <Image />
-      <Layout />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
+
 export default App;
