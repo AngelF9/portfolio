@@ -1,0 +1,27 @@
+.who {
+  text-align: center;
+}
+
+.about-me {
+  padding-left: 20px;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20 px;
+}
+
+.tech-item {
+  background-color: #d9d9d9;
+
+  border-radius: 25px;
+}
+
+.tech-item img {
+  max-width: 75px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding-left: 20px;
+}
