@@ -118,6 +118,14 @@ function Project() {
             link=""
           />
         </div>
+        <div className="project-item">
+          <Card
+            imageSrc="/images/portfolio.jpg"
+            title="Portfolio"
+            text="this project is what you are currently using, nonethleses if you would like to look at the code, feel free to do so"
+            link=""
+          />
+        </div>
       </div>
     </div>
   );

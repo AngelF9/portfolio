@@ -122,9 +122,9 @@ function About() {
           about the future and eager to embrace the challenges and opportunities
           that lie ahead.
         </p>
-        <br />
-        <br />
       </div>
+      <br />
+      <br />
     </div>
   );
 }
