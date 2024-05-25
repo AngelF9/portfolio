@@ -1,0 +1,16 @@
+/* some of these css elements are still new 
+* to me so make sure to you go back and take 
+* note of how they work */
+.wallpaper-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* Change the text color as needed */
+  text-align: center;
+}

@@ -3,7 +3,8 @@ import Pagination from "react-bootstrap/Pagination";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-
+// pass text into gridPost
+// can mention neovim and some cool keybindings or plugins
 function GridPosts() {
   return (
     <Row xs={1} md={2} className="g-4">

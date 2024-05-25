@@ -1,3 +1,39 @@
+/* i moved this code from about.css since i the techincal section over as well*/
+.tech-tools {
+  text-align: center;
+}
+.tech-stack {
+  text-align: center;
+  padding-left: 20px;
+}
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+/* display, flex, and justify used to center the image */
+.tech-item {
+  background-color: #d9d9d9;
+  border-radius: 30px;
+  /*display,flex,just,padding*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* attempting to restrict size of the gray box */
+  max-width: 160px;
+  max-height: 155px;
+}
+
+.tech-item img {
+  /* max-width allows us to adjust image size */
+  max-width: 50px;
+  margin-bottom: 4px;
+  margin-top: 4px;
+  /* padding-left: 20px; */
+}
+
 /* this file is somewhat similar to About.css however the grid 
 * and items here should be more responisbe */
 .project {
