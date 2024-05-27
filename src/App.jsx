@@ -9,6 +9,7 @@ import Project from "./pages/Project";
 function App() {
   // Conditionally set the basename based on the environment
   const basename = import.meta.env.VITE_APP_BASENAME || "";
+  console.log("Base Name:", basename);
 
   return (
     <Router basename={basename}>
