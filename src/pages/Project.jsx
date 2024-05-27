@@ -87,7 +87,7 @@ function Project() {
       <div className="project-grid">
         <div className="project-item">
           <Card
-            imageSrc="/images/socket.png"
+            imageSrc="/portfolio/images/socket.png"
             title="Web Socket Program"
             text="Construct a web socket program for both client and server side"
             link="https://github.com/samv-33/cpsc-471-socket-program"
@@ -95,7 +95,7 @@ function Project() {
         </div>
         <div className="project-item">
           <Card
-            imageSrc="/images/blog.jpg"
+            imageSrc="/portfolio/images/blog.jpg"
             title="Blog Web App"
             text="Blog web app allows users to view blogs, create account, and make blog post"
             link="https://github.com/AngelF9/blogger"
@@ -103,7 +103,7 @@ function Project() {
         </div>
         <div className="project-item">
           <Card
-            imageSrc="/images/tuffynav.jpg"
+            imageSrc="/portfolio/images/tuffynav.jpg"
             title="Tuffy Navigation GUI"
             text="construct a navigation system pertaining to CSUF campus"
             link="https://github.com/Ahmir-Bijanzadeh/TuffyNav"
@@ -112,7 +112,7 @@ function Project() {
 
         <div className="project-item">
           <Card
-            imageSrc="/images/interpreter.png"
+            imageSrc="/portfolio/images/interpreter.png"
             title="Interpreter"
             text="directly exectures instructions written in a JS without previously converting them to an object code or machine code."
             link=""
@@ -120,7 +120,7 @@ function Project() {
         </div>
         <div className="project-item">
           <Card
-            imageSrc="/images/portfolio.jpg"
+            imageSrc="/portfolio/images/portfolio.jpg"
             title="Portfolio"
             text="this project is what you are currently using, nonethleses if you would like to look at the code, feel free to do so"
             link=""
