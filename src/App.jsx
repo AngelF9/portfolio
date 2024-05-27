@@ -7,8 +7,11 @@ import About from "./pages/About";
 import Project from "./pages/Project";
 
 function App() {
+  // Conditionally set the basename based on the environment
+  const basename = import.meta.env.VITE_APP_BASENAME || "";
+
   return (
-    <Router basename="/portfolio">
+    <Router basename={basename}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
