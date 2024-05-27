@@ -20,7 +20,11 @@ function TabsExample() {
             <ListGroup.Item>📍Costa Mesa, CA</ListGroup.Item>
 
             <ListGroup.Item action href="#link1">
-              <Image src="images/email.png" roundedCircle className="logos" />
+              <Image
+                src="/portfolio/images/email.png"
+                roundedCircle
+                className="logos"
+              />
               Email
             </ListGroup.Item>
 
@@ -28,7 +32,11 @@ function TabsExample() {
               action
               href="https://github.com/AngelF9?tab=repositories"
             >
-              <Image src="images/github.png" roundedCircle className="logos" />
+              <Image
+                src="/portfolio/images/github.png"
+                roundedCircle
+                className="logos"
+              />
               Github
             </ListGroup.Item>
 
@@ -37,7 +45,7 @@ function TabsExample() {
               href="https://www.linkedin.com/in/angel-fuentes-6b3b15243"
             >
               <Image
-                src="images/linkedin.png"
+                src="/portfolio/images/linkedin.png"
                 roundedCircle
                 className="logos"
               />
@@ -56,7 +64,7 @@ function ShapeExample() {
       <Row>
         <Col xs={4} md={2}>
           <Image
-            src="images/headshot.png"
+            src="/portfolio/images/headshot.png"
             roundedCircle
             className="profile-image"
           />

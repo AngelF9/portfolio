@@ -6,7 +6,11 @@ import "./Home.css";
 function Image() {
   return (
     <div className="wallpaper-container">
-      <img src="images/wallpaper_15.jpg" alt="" className="wallpaper-photo" />
+      <img
+        src="/portfolio/images/wallpaper_15.jpg"
+        alt=""
+        className="wallpaper-photo"
+      />
       <div className="overlay-text">
         <h1>
           <strong>Angel's Software Engineer Portfolio</strong>
