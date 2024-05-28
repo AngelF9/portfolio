@@ -17,20 +17,38 @@ function TabsExample() {
       <Row>
         <Col sm={20}>
           <ListGroup>
-            <ListGroup.Item>📍Costa Mesa, CA</ListGroup.Item>
+            <ListGroup.Item>
+              <Image
+                src="/portfolio/images/pin.png"
+                roundedCircle
+                className="logos"
+              />
+              Costa Mesa, CA
+            </ListGroup.Item>
 
-            <ListGroup.Item action href="#link1">
+            <ListGroup.Item action href="mailto:angelfc@csu.fullerton.edu">
               <Image
                 src="/portfolio/images/email.png"
                 roundedCircle
                 className="logos"
               />
-              Email
+              Email - School Related
+            </ListGroup.Item>
+
+            <ListGroup.Item action href="mailto:angelfuentesc01@gmail.com">
+              <Image
+                src="/portfolio/images/email.png"
+                roundedCircle
+                className="logos"
+              />
+              Email - Work
             </ListGroup.Item>
 
             <ListGroup.Item
               action
               href="https://github.com/AngelF9?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Image
                 src="/portfolio/images/github.png"
@@ -43,6 +61,8 @@ function TabsExample() {
             <ListGroup.Item
               action
               href="https://www.linkedin.com/in/angel-fuentes-6b3b15243"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Image
                 src="/portfolio/images/linkedin.png"
