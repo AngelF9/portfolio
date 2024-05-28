@@ -1,29 +1,20 @@
 import "./MainContent.css";
 import Pagination from "react-bootstrap/Pagination";
 import Card from "react-bootstrap/Card";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
+
 // pass text into gridPost
 // can mention neovim and some cool keybindings or plugins
-function GridPosts() {
+function GridPosts({ imageSrc, title, text }) {
   return (
-    <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: 1 }).map((_, idx) => (
-        <Col key={idx}>
-          <Card>
-            <Card.Img variant="top" src="/portfolio/images/wallpaper_20.jpg" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      ))}
-    </Row>
+    <Card style={{ width: "18rem" }}>
+      <Card.Img variant="top" src={imageSrc} />
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>{text}</Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
   );
 }
 
@@ -56,9 +47,24 @@ function MainContent() {
       <br />
       <h3 className="blog-title"> Blog Post</h3>
       <br />
-      <PageBar className="page-bar" />
+      {/* <PageBar className="page-bar" /> */}
       <br />
-      <GridPosts />
+      <div className="blog-grid">
+        <div className="blog-item">
+          <GridPosts
+            imageSrc="/portfolio/images/wallpaper_20.jpg"
+            title="NeoVim and I"
+            text="The first steps in using neovim are always the hardest, however, once those first steps are taken one hardly ever returns back."
+          />
+        </div>
+        <div className="blog-item">
+          <GridPosts
+            imageSrc="/portfolio/images/wallpaper_21.jpg"
+            title="Summer 2024 Goals"
+            text="I aim to build an online Forum. Friends and I discussed building an online shop so This is something i would like to build in late summer. I also aim to be working on a JS Intepreter thoughout all of summer as a way to learn more about JS."
+          />
+        </div>
+      </div>
     </div>
   );
 }

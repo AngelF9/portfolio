@@ -74,7 +74,7 @@ function ShapeExample() {
   );
 }
 
-function KitchenSinkExample() {
+function ProfileCard() {
   return (
     <Card style={{ width: "18rem" }}>
       <ShapeExample />
@@ -95,10 +95,10 @@ function KitchenSinkExample() {
 function Layout() {
   return (
     <div className="layout-container">
-      <div className="kitchen-sink">
-        <KitchenSinkExample />
+      <div className="profile-card">
+        <ProfileCard />
       </div>
-      <div className="main-content">
+      <div className="main-content-layout">
         <MainContent />
       </div>
     </div>

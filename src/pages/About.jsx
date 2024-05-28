@@ -4,8 +4,12 @@ import "./About/About.css";
 
 function Image() {
   return (
-    <div className="wallpaper-container">
-      <img src="images/wallpaper_16.jpg" alt="" className="wallpaper-photo" />
+    <div className="wallpaper-container-about">
+      <img
+        src="images/wallpaper_16.jpg"
+        alt=""
+        className="wallpaper-photo-about"
+      />
       <div className="overlay-text">
         <h1>
           <strong>So Who Am I?</strong>

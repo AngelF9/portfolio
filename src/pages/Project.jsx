@@ -5,8 +5,12 @@ import Card from "./Project/ProjectItem";
 
 function Image() {
   return (
-    <div className="wallpaper-container">
-      <img src="images/wallpaper_19.jpg" alt="" className="wallpaper-photo" />
+    <div className="wallpaper-container-project">
+      <img
+        src="images/wallpaper_19.jpg"
+        alt=""
+        className="wallpaper-photo-project"
+      />
       <div className="overlay-text">
         <h1>
           <strong>Technologies and Projects</strong>

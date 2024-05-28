@@ -1,13 +1,13 @@
-.wallpaper-container {
-  position: relative;
-  width: 100%;
-  height: 60vh; /* Adjust height as needed */
-  overflow: hidden;
-}
+/* .wallpaper-container { */
+/*   position: relative; */
+/*   width: 100%; */
+/*   height: 60vh; */
+/*   overflow: hidden; */
+/* } */
 
-.wallpaper-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+/* .wallpaper-photo { */
+/*   width: 100%; */
+/*   height: 100%; */
+/*   object-fit: cover; */
+/*   display: block; */
+/* } */

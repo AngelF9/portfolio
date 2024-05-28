@@ -7,3 +7,24 @@
   justify-content: center;
   margin-top: 20px; /* Add some margin on top */
 }
+
+.main-content {
+  flex: 1; /* Allow MainContent to grow and take available space */
+  /* max-width: 900px; /* Set a maximum width for MainContent */
+  width: 100%;
+}
+
+/* adjust the blog grid and blog items: refering to Project.css */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Nice! */
+  gap: 10px;
+  padding: 10px;
+}
+
+.blog-item {
+  box-sizing: border-box; /* Nice! */
+  display: flex; /* Nice! */
+  flex-direction: column;
+  align-items: center; /* Nice! */
+}

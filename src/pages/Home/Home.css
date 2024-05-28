@@ -1,10 +1,26 @@
 /* some of these css elements are still new 
 * to me so make sure to you go back and take 
 * note of how they work */
+
+/* .wallpaper-container { */
+/*   position: relative; */
+/*   width: 100%; */
+/*   max-width: 100%; */
+/*   overflow: hidden; */
+/* } */
+
 .wallpaper-container {
   position: relative;
   width: 100%;
-  max-width: 100%;
+  height: 65vh;
+  overflow: hidden;
+}
+
+.wallpaper-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .overlay-text {
   position: absolute;
