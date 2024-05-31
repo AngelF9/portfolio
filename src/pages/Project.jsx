@@ -116,17 +116,27 @@ function Project() {
 
         <div className="project-item">
           <Card
-            imageSrc="/portfolio/images/interpreter.png"
-            title="Interpreter"
-            text="directly exectures instructions written in a JS without previously converting them to an object code or machine code."
-            link=""
-          />
-        </div>
-        <div className="project-item">
-          <Card
             imageSrc="/portfolio/images/portfolio.jpg"
             title="Portfolio"
             text="this project is what you are currently using, nonethleses if you would like to look at the code, feel free to do so"
+            link=""
+          />
+        </div>
+
+        <div className="project-item">
+          <Card
+            imageSrc="/portfolio/images/shop.jpg"
+            title="Online shop - Current Project"
+            text="creating an online shop"
+            link=""
+          />
+        </div>
+
+        <div className="project-item">
+          <Card
+            imageSrc="/portfolio/images/forum.jpg"
+            title="Online Forum - Future Project"
+            text="creating an online forum"
             link=""
           />
         </div>
