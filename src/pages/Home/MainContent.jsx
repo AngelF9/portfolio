@@ -1,135 +1,183 @@
-import React, { useState } from "react";
 import "./MainContent.css";
-import Pagination from "react-bootstrap/Pagination";
-import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
+import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import Dropdown from "react-bootstrap/Dropdown";
+import NavLink from "react-bootstrap/NavLink";
+import Stack from "react-bootstrap/Stack";
 
-// pass text into gridPost
-// can mention neovim and some cool keybindings or plugins
-function GridPosts({ imageSrc, title, text }) {
+// this is something new to mee i did not know i could make div into an object
+function HorizontalBar({ width, height }) {
+  return <div className="horizontal-bar" style={{ width, height }}></div>;
+}
+
+function ToggleList({ items }) {
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={imageSrc} />
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>{text}</Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
+    <Stack gap={3}>
+      {/* map() as iterative method */}
+      {/* returns a new array  */}
+      {Object.entries(items).map(([key, value], index) => (
+        <div key={index} className="p-2">
+          <div className="item-container">
+            <div className="items">{key}</div>
+            <div className="item-right">{value}</div>
+          </div>
+
+          <HorizontalBar width="100%" height="10px" />
+        </div>
+      ))}
+    </Stack>
   );
 }
 
-function PageBar({ currentPage, totalPages, onPageChange }) {
-  const items = [];
-  // loop thought num from 1 - totalPages
-  for (let number = 1; number <= totalPages; number++) {
-    // for each num, we create Pagination.Item component: 1..2..3..4 pages
-    items.push(
-      <Pagination.Item
-        // key prop is special attribute in react to help identify which items have changed, been added, or removed
-        // key prop is set to current number, ensure each item is unique
-        key={number}
-        // active prop used by Bootstrap's Pagination.Item component to visually indicate the currently active page
-        // set active prop to true if num matches the currentPage
-        active={number == currentPage}
-        // onClick prop used in react to handle click events on elements
-        // handle page change on click
-        onClick={() => onPageChange(number)}
-      >
-        {number}
-      </Pagination.Item>,
-    );
-  }
-
+function ButtonPage({ page, title }) {
   return (
-    <Pagination className="page-bar">
-      {/* Previous button, disabled if on the first page */}
-      <Pagination.Prev
-        onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage === 1}
-      />
-      {items}
-      {/* Next button, disabled if on the last page */}
-      <Pagination.Next
-        onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
-      />
-    </Pagination>
+    <>
+      <Button variant="dark" as={Link} to={page}>
+        {title}
+      </Button>
+    </>
+  );
+}
+
+function ProfilePic() {
+  return (
+    <Container>
+      <Row>
+        <Col xs={4} md={2}>
+          <Image
+            src="/portfolio/images/headshot.png"
+            roundedCircle
+            className="profile-image"
+          />
+        </Col>
+      </Row>
+    </Container>
+  );
+}
+
+const items = {
+  HTML: "<1 year",
+  CSS: "<1 year",
+  JavaScript: "<1 year",
+  Python: "<1 year",
+};
+
+const items_used = {
+  "x86 Assembly": "<1 year",
+  "C++": "1+ year",
+};
+
+function Lister({ title, list_items }) {
+  const [show, setShow] = useState(false);
+  return (
+    <>
+      <strong>
+        <Dropdown.Toggle as={NavLink} onClick={() => setShow(!show)}>
+          {title}
+        </Dropdown.Toggle>
+      </strong>
+      {show ? <ToggleList items={list_items} /> : null}
+    </>
   );
 }
 
 function MainContent() {
-  // state to keep track of the current page
-  const [currentPage, setCurrentPage] = useState(1);
-  // number of posts of to display per page
-  const postsPerPage = 2;
-
-  // sample blog posts data
-  // Sample blog posts data
-  const blogPosts = [
-    {
-      title: "NeoVim and I",
-      imageSrc: "/portfolio/images/wallpaper_20.jpg",
-      text: "The first steps in using neovim are always the hardest, however, once those first steps are taken one hardly ever returns back.",
-    },
-    {
-      title: "Summer 2024 Goals",
-      imageSrc: "/portfolio/images/goals.jpg",
-      text: "I aim to build an online Forum. Friends and I discussed building an online shop so This is something I would like to build in late summer. I also aim to be working on a JS Intepreter throughout all of summer as a way to learn more about JS.",
-    },
-    {
-      title: "One Piece talk",
-      imageSrc: "/portfolio/images/onepiece.jpg",
-      text: "One Piece is a long-running anime and manga series that has captured the hearts of fans all over the world. Its intricate storyline and deep characters make it a must-watch.",
-    },
-    {
-      title: "Running at Back Bay",
-
-      imageSrc: "/portfolio/images/backbay.jpg",
-      text: "Running at Back Bay is a refreshing experience. The scenery is beautiful and it provides a great way to stay fit and enjoy nature.",
-    },
-  ];
-
-  // calculate total number of pages needed
-  // Math.ceil, methods that rounds up
-  const totalPages = Math.ceil(blogPosts.length / postsPerPage);
-
-  // function to handle page changes, when a different page number is clicked
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
-  // calculate the posts to display on the current page
-  // .slice(start, end)
-  // not including end
-  const currentPosts = blogPosts.slice(
-    (currentPage - 1) * postsPerPage,
-    currentPage * postsPerPage,
-  );
-
+  // const [show, setShow] = useState(true);
   return (
     <div className="main-content">
       <br />
-      <h3 className="blog-title"> Blog Post</h3>
       <br />
-      <PageBar
-        className="page-bar"
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
-      <br />
-      <div className="blog-grid">
-        {currentPosts.map((post, index) => (
-          <div className="blog-item" key={index}>
-            <GridPosts
-              imageSrc={post.imageSrc}
-              title={post.title}
-              text={post.text}
-            />
+      <div className="center-box">
+        <div className="container">
+          <div className="image">
+            <ProfilePic />
           </div>
-        ))}
+          <div className="text">
+            <br />
+            <br />
+            <h4>Angel Fuentes</h4>
+            <h5>Computer Science Major and Mathematics Minor</h5>
+            <div className="social-chain">
+              <a
+                href="mailto:angelfuentesc01@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/portfolio/images/email.png"
+                  roundedCircle
+                  className="logos"
+                />
+              </a>
+              <a
+                href="https://github.com/AngelF9?tab=repositories"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/portfolio/images/github.png"
+                  roundedCircle
+                  className="logos"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/angel-fuentes-6b3b15243"
+                target="_blank"
+              >
+                <Image
+                  src="/portfolio/images/linkedin.png"
+                  roundedCircle
+                  className="logos"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <br />
+        <p>
+          Hello I'm Angel, a computer science student at CUSF, where I got
+          experience using C++, Python, JavaScript, HTML, CSS, React, and Flask.
+          In the following semseter of Fall 2024 I'm looking forward to learn
+          more about backend langauges ranging from Node.js, Express.js, and
+          MongoDB. I will also be looking into PHP and SQL but I have a feeling
+          I'll be placing alot of my focus on the former list. Moreover, I enjoy
+          learning new things but more than anything I love to understand how
+          they work, as this tends to be of more use to me in the long run. To
+          learn more about me, please check out the page linked below
+        </p>
+        <ButtonPage page="/about" title="About Me Page" />
+        <br />
+        <br />
+        <br />
+
+        <h5>
+          <strong>Skills</strong>
+        </h5>
+
+        <Lister title="Language I'm actively using" list_items={items} />
+        <br />
+        <Lister title="Language I've used previously" list_items={items_used} />
+        <br />
+        <p>
+          To get a full fledge understanding of my skills and knowledge check
+          out my project page linked below
+        </p>
+
+        <ButtonPage page="/project" title="Project Page" />
+
+        {/* <Dropdown.Toggle as={NavLink} onClick={() => setShow(!show)}> */}
+        {/*   Languages I'm actively using */}
+        {/* </Dropdown.Toggle> */}
+        {/**/}
+        {/* {show ? <ToggleList items={items} /> : null} */}
       </div>
+      <br />
+      <br />
     </div>
   );
 }

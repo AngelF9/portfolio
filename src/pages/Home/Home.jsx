@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "./Navbar";
-import Layout from "./Layout";
+import MainContent from "./MainContent";
 import "./Home.css";
 
 function Image() {
@@ -25,7 +25,8 @@ function HomePage() {
     <div>
       <NavBar />
       <Image />
-      <Layout />
+      <MainContent />
+      {/* <Layout /> */}
     </div>
   );
 }

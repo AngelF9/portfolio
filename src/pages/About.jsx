@@ -10,7 +10,7 @@ function Image() {
         alt=""
         className="wallpaper-photo-about"
       />
-      <div className="overlay-text">
+      <div className="overlay-text-about">
         <h1>
           <strong>So Who Am I?</strong>
         </h1>

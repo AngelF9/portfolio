@@ -11,7 +11,7 @@ function Image() {
         alt=""
         className="wallpaper-photo-project"
       />
-      <div className="overlay-text">
+      <div className="overlay-text-project">
         <h1>
           <strong>Technologies and Projects</strong>
         </h1>

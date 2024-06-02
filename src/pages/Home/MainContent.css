@@ -1,30 +1,53 @@
-.blog-title {
+.center-box {
+  /* max and margin are responsible for centering the text */
+  max-width: 800px;
+  margin: 0 auto;
+  /* styling */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+  width: 250px; /* Set a specific width for the profile picture */
+  height: 250px; /* Ensure the height matches the width */
+  object-fit: cover; /* Ensure the image covers the specified dimensions */
+  border-radius: 20%; /* Make the image circular */
+}
+/* referenced: How to put image and text side-by-side in HTML? */
+.container {
+  display: grid;
+  align-items: normal;
+  grid-template-columns: 1fr 4fr;
+  column-gap: 10px;
+}
+
+/* center text */
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
 }
 
-.page-bar {
+/* going unused for now by might need later */
+.logos {
+  width: 30px; /* Set a specific width for the profile picture */
+  height: 30px; /* Ensure the height matches the width */
+  object-fit: cover; /* Ensure the image covers the specified dimensions */
+  border-radius: 20%; /* Make the image circular */
+  /* following lines space logo from text*/
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.horizontal-bar {
+  background-color: #4caf50; /* Change the color as needed */
+  border-radius: 20px;
+}
+
+/* putting text side by side left and right align */
+.item-container {
   display: flex;
-  justify-content: center;
-  margin-top: 20px; /* Add some margin on top */
-}
-
-.main-content {
-  flex: 1; /* Allow MainContent to grow and take available space */
-  /* max-width: 900px; /* Set a maximum width for MainContent */
-  width: 100%;
-}
-
-/* adjust the blog grid and blog items: refering to Project.css */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Nice! */
-  gap: 10px;
-  padding: 10px;
-}
-
-.blog-item {
-  box-sizing: border-box; /* Nice! */
-  display: flex; /* Nice! */
-  flex-direction: column;
-  align-items: center; /* Nice! */
+  justify-content: space-between;
+  align-items: center;
 }
